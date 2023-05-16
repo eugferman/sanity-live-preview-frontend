@@ -8,6 +8,7 @@ import { groq } from "next-sanity";
 
 import { client } from "../lib/sanity.client";
 import Movie from "../components/Movie";
+import PreviewComponent from "@/components/PreviewComponent";
 
 const PreviewMovie = lazy(() => import("../components/PreviewMovie"));
 const query = groq`*[_type == "movie" && slug.current == $slug][0]{
@@ -61,9 +62,10 @@ export default function Page({
 }) {
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      <PreviewMovie query={query} queryParams={data?.queryParams} />
+      <PreviewComponent query={query} queryParams={data?.queryParams} ComponentProp={<Movie />}/>
+      {/*<PreviewMovie query={query} queryParams={data?.queryParams} />*/}
     </PreviewSuspense>
   ) : (
-    <Movie movie={data?.movie} />
+    <Movie data={data?.movie} />
   );
 }

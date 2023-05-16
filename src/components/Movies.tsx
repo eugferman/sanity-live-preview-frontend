@@ -4,14 +4,14 @@ import Link from "next/link";
 import type { SanityDocument } from "@sanity/client";
 import Head from "next/head";
 
-export default function Movies({ movies }: { movies: SanityDocument[] }) {
+export default function Movies({ data }: { data?: SanityDocument[] }) {
   return (
     <>
       <Head>
-        <title>{movies.length} Movies</title>
+        <title>{data?.length} Movies</title>
       </Head>
       <main className="container mx-auto grid grid-cols-1 divide-y divide-blue-100">
-        {movies.map((movie) => (
+        {data?.map((movie) => (
           <Link
             key={movie._id}
             href={movie.slug.current}

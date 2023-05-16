@@ -6,6 +6,7 @@ import type { SanityDocument } from "@sanity/client";
 import { client } from "../lib/sanity.client";
 import Movies from "../components/Movies";
 import { PreviewSuspense } from "next-sanity/preview";
+import PreviewComponent from "@/components/PreviewComponent";
 
 const PreviewMovies = lazy(() => import("../components/PreviewMovies"));
 const query = groq`*[_type == "movie" && defined(slug.current)]{
@@ -36,9 +37,10 @@ export default function Home({
   // The fetch happens inside PreviewMovies
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      <PreviewMovies query={query} />
+      <PreviewComponent query={query} queryParams={{}} ComponentProp={<Movies />}/>
+      {/* <PreviewMovies query={query} /> */}
     </PreviewSuspense>
   ) : (
-    <Movies movies={data} />
+    <Movies data={data} />
   );
 }

@@ -9,7 +9,7 @@ export default function PreviewMovies({ query }: { query: string }) {
 
   return (
     <>
-      <Movies movies={data} />
+      <Movies data={data} />
       <Link
         className="bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0"
         href="/api/exit-preview"

@@ -9,22 +9,22 @@ import Head from "next/head";
 
 const builder = imageUrlBuilder(client);
 
-export default function Movie({ movie }: { movie: SanityDocument }) {
+export default function Movie({ data }: { data?: SanityDocument }) {
   return (
     <>
       <Head>
-        <title>{movie?.title}</title>
+        <title>{data?.title}</title>
       </Head>
       <main className="container mx-auto prose prose-lg p-4">
-        <h1>{movie?.title}</h1>
-        {movie && <Image
+        <h1>{data?.title}</h1>
+        {data && <Image
           className="float-left m-0 w-1/3 mr-4 rounded-lg"
-          src={builder.image(movie?.poster).width(300).height(300).url()}
+          src={builder.image(data?.poster).width(300).height(300).url()}
           width={300}
           height={300}
-          alt={movie?.title}
+          alt={data?.title}
         />}
-        <PortableText value={movie?.overview} />
+        <PortableText value={data?.overview} />
       </main>
     </>
   );
