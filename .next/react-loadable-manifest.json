@@ -1,0 +1,33 @@
+{
+  "../../node_modules/@sanity/client/dist/index.browser.js -> @sanity/eventsource": {
+    "id": 3699,
+    "files": [
+      "static/chunks/699.1ab40e97150fd2fa.js"
+    ]
+  },
+  "../../node_modules/@sanity/preview-kit/dist/index.js -> @sanity/eventsource/browser": {
+    "id": 3699,
+    "files": [
+      "static/chunks/699.1ab40e97150fd2fa.js"
+    ]
+  },
+  "../../node_modules/@sanity/preview-kit/dist/index.js -> @sanity/groq-store": {
+    "id": 6595,
+    "files": [
+      "static/chunks/595.54fcf771c8e551e2.js"
+    ]
+  },
+  "[slug].tsx -> ../components/PreviewMovie": {
+    "id": 4541,
+    "files": [
+      "static/chunks/664-3a78f5659c3c6145.js",
+      "static/chunks/541.4291d4912212d4bf.js"
+    ]
+  },
+  "index.tsx -> ../components/PreviewMovies": {
+    "id": 6493,
+    "files": [
+      "static/chunks/493.100de42cc73364db.js"
+    ]
+  }
+}
