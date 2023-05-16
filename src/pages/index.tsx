@@ -37,8 +37,8 @@ export default function Home({
   // The fetch happens inside PreviewMovies
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      <PreviewComponent query={query} queryParams={{}} ComponentProp={<Movies />}/>
-      {/* <PreviewMovies query={query} /> */}
+      {/* <PreviewComponent query={query} queryParams={{}} ComponentProp={<Movies />}/> */}
+      <PreviewMovies query={query} />
     </PreviewSuspense>
   ) : (
     <Movies data={data} />
