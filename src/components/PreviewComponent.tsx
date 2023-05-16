@@ -1,10 +1,8 @@
-// ./components/PreviewMovie.tsx
-
 import Link from "next/link";
 import { usePreview } from "../lib/sanity-preview";
 import Movie from "./Movie";
 
-const PreviewComponent = ({ query, queryParams, ComponentProp }: { query: string, queryParams: {[key: string]: any},  ComponentProp: any }) => {
+const PreviewComponent = ({ query, queryParams, ComponentProp }: { query: string, queryParams: {[key: string]: any},  ComponentProp: React.ComponentType<any> }) => {
   const data = usePreview(null, query, queryParams);
 
   return (

@@ -62,8 +62,12 @@ export default function Page({
 }) {
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      {/*<PreviewComponent query={query} queryParams={data?.queryParams} ComponentProp={<Movie />}/>*/}
-      <PreviewMovie query={query} queryParams={data?.queryParams} />
+      <PreviewComponent
+        query={query}
+        queryParams={data?.queryParams}
+        ComponentProp={Movie}
+      />
+      {/* <PreviewMovie query={query} queryParams={data?.queryParams} /> */}
     </PreviewSuspense>
   ) : (
     <Movie data={data?.movie} />

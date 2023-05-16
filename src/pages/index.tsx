@@ -32,13 +32,12 @@ export default function Home({
   preview: Boolean;
   data: SanityDocument[];
 }) {
-
   // PreviewSuspense shows while data is being fetched
   // The fetch happens inside PreviewMovies
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      {/* <PreviewComponent query={query} queryParams={{}} ComponentProp={<Movies />}/> */}
-      <PreviewMovies query={query} />
+      <PreviewComponent query={query} queryParams={{}} ComponentProp={Movies} />
+      {/* <PreviewMovies query={query} /> */}
     </PreviewSuspense>
   ) : (
     <Movies data={data} />
